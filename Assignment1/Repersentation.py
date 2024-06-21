@@ -1,50 +1,43 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def MSE(h, y):
-    error = 0
-    for i in range(len(h)):
-        error += (h[i] - y[i])**2
-    mse = 1/(2*2) * error
-    return mse
+def j_theta(x, y, theta1):
+    n = len(y)
+    sq_error = []
+    for i in range(n):
+        hypothesis = theta1 * x[i]
+        xi_error = (hypothesis - y[i])**2
+        sq_error.append(xi_error)
+    j_theta1 = (1 / (2 * n)) * sum(sq_error)
+    return j_theta1
 
-def linear(w, x):
-    f_x = []
-    for i in x :
-        f_x.append(w*i)
-    return f_x
-
-def Gradient_Descent(x, y, w, rate, a):
-    f_x = linear(w, x)
-    plot_line(x, w)
+def Gradient_Descent(x, y, theta1, rate, alpha):
+    plot_line(x, theta1)
 
     for _ in range(rate):
-        w = w - a * 2 * (w-1)
-        plot_line(x, w)
-        f_x = linear(w, x)
-        mse = MSE(f_x, y)
+        theta1 = theta1 - alpha * 2 * (theta1-1)
+        plot_line(x, theta1)
+        mse = j_theta(x, y, theta1)
         if mse == 0:
-            print(f"w = {w}")
+            print(f"theta1 = {theta1}")
             break
     print(f"mse = {mse}")
-    # return w
 
-def plot_line(x, w):
+def plot_line(x, theta1):
     p = []
     x_p = []
     Min = min(x)
     Max = max(x)
     for i in range(Min-5, Max+5):
         x_p.append(i)
-        p.append(w * i)
+        p.append(theta1 * i)
     plt.plot(x_p, p)
-
 
 if __name__ == "__main__":
     x = np.array([0, 2])
     y = np.array([0, 2])
     plt.scatter(x, y)
-    w = 0
-    Gradient_Descent(x, y, w, 100, 0.5)
+    theta1 = 0
+    Gradient_Descent(x, y, theta1, 100, 0.5)
     plt.axis([-0.5, 3.5, -0.5, 3.5])
     plt.show()
