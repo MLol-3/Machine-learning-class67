@@ -6,8 +6,8 @@ def j_theta(x, y, theta1):
     n = len(y)
     sq_error = []
     for i in range(n):
-        hypothensis = theta1 * x[i]
-        xi_error = (hypothensis - y[i])**2
+        hypothesis = theta1 * x[i]
+        xi_error = (hypothesis - y[i])**2
         sq_error.append(xi_error)
     j_theta1 = (1/(2*n)) * sum(sq_error)
     return j_theta1
