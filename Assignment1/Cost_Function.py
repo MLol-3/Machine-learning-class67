@@ -20,7 +20,7 @@ if __name__ == "__main__":
         theta_out = j_theta(x, y, i)
         plt.scatter(i, theta_out)
 
-    E  = np.linspace(-5,8)
+    E  = np.linspace(-8,8)
     w = j_theta(x, y, E)
     print(w)
     plt.plot(E, w)
