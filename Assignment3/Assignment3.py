@@ -23,7 +23,19 @@ def derivative_j_theta(x, y, theta1):
     dj_theta1 = (1/n) * sum(error)
     return dj_theta1
 
-# Gradient Descent function incorporating the cost function
+
+
+# Gradient Descent function ใช้งานร่วมกันกับ cost function
+
+# theta_new = theta_old - learning_rate * (1/n) * sum((h(x_i) - y_i) * x_i)
+# theta_new : Updated weight
+# theta_old : Current weight
+# learning_rate : Learning rate
+# n : Number of data points
+# h(x_i) : Hypothesis (predicted value) for data point x_i using the current weight
+# y_i : Target label for data point x_i
+# x_i : row of the input data matrix X 
+
 def gradient_descent(x, y, initial_theta1, learning_rate, iterations):
     theta_vals = [initial_theta1]
     for _ in range(iterations):
@@ -32,12 +44,14 @@ def gradient_descent(x, y, initial_theta1, learning_rate, iterations):
         theta_vals.append(theta_new)
     return theta_vals
 
+
+
 if __name__ == "__main__":
     x = [0, 2]
     y = [0, 2]
     
     # Plotting the original cost function
-    i = np.linspace(-6, 8, 100)
+    i = np.linspace(-4.5, 6.5, 100)
     J = j_theta(x, y, i)
     
     # Create subplots
@@ -45,8 +59,8 @@ if __name__ == "__main__":
     fig.suptitle('Gradient Descent with Different Learning Rates', fontsize=16)
 
     # Applying gradient descent with different learning rates
-    learning_rates = [0.1, 0.5, 0.75, 1.01]
-    iterations = 15
+    learning_rates = [0.1, 0.5, 0.75, 1.006]
+    iterations = 8
     initial_theta1 = 6
     
     for idx, lr in enumerate(learning_rates):
