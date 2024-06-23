@@ -1,31 +1,30 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-def j_theta(x, y, theta1):
+# Cost function
+def j_theta(X, y, theta0, theta1):
     n = len(y)
     sq_error = []
     for i in range(n):
-        hypothensis = theta1 * x[i]
-        xi_error = (hypothensis - y[i])**2
+        hypothesis = theta0 + theta1 * X[i]
+        xi_error = (hypothesis - y[i])**2
         sq_error.append(xi_error)
-    j_theta1 = (1/(2*n)) * sum(sq_error)
+    j_theta1 = (1 / (2 * n)) * sum(sq_error)
     return j_theta1
 
 if __name__ == "__main__":
-    x = [0, 2]
-    y = [0, 2]
-    
-    for i in range(-5,8):
-        theta_out = j_theta(x, y, i)
-        plt.scatter(i, theta_out)
+    # Data points
+    x = np.array([0, 2])
+    y = np.array([0, 2])
 
-    E  = np.linspace(-5,8)
-    w = j_theta(x, y, E)
-    print(w)
-    plt.plot(E, w)
-    plt.xlabel("w1")
+    # สร้างเส้นในการเทียบ E and theta1 
+    E  = np.linspace(-8,8)
+    theta1 = j_theta(x, y, 0, E)
+
+    plt.plot(E, theta1)
+    plt.xlabel("theta1")
     plt.ylabel("E ")
+    plt.title('Evaluation')
     plt.axis([-6, 8, -0.5, 40])
     plt.show()
     
