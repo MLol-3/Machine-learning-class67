@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
     # Applying gradient descent with different learning rates
     learning_rates = [0.1, 0.5, 0.75, 1.006]
-    iterations = 8
+    iterations = 15
     initial_theta1 = 6
     
     for idx, lr in enumerate(learning_rates): # 0, 0.1 > 1, 0.5 > 2, 0.75 > 3, 1.006
