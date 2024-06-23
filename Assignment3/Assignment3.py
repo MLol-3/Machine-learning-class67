@@ -2,6 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Cost function
+# calculates the average error of a linear regression model
+#
+# Needed To evaluate how well the model fits the data.
+# ใช้เพือประเมินว่า model นั้นมีความเข้ากันกับ Data มากแค่ไหน
 def j_theta(x, y, theta1):
     n = len(y)
     sq_error = []
@@ -13,6 +17,10 @@ def j_theta(x, y, theta1):
     return j_theta1
 
 # Derivative of the cost function with respect to theta1
+# derivative (slope) tells which direction to step to reduce the cost
+#
+# Needed To provide direction for minimizing the cost.
+# ใช้เพื่อบอกว่าเราต้องเดินไปทางไหนถึงจะไปยังจุดที่ error น้อยที่สุด
 def derivative_j_theta(x, y, theta1):
     n = len(y)
     error = []
@@ -24,8 +32,7 @@ def derivative_j_theta(x, y, theta1):
     return dj_theta1
 
 
-
-# Gradient Descent function ใช้งานร่วมกันกับ cost function
+# Gradient Descent function ใช้งานร่วมกันกับ Derivative of the cost function
 
 # theta_new = theta_old - learning_rate * (1/n) * sum((h(x_i) - y_i) * x_i)
 # theta_new : Updated weight
@@ -36,6 +43,8 @@ def derivative_j_theta(x, y, theta1):
 # y_i : Target label for data point x_i
 # x_i : row of the input data matrix X 
 
+# Needed for iteratively update the parameter and converge to an optimal value.
+# ใช้เพื่อการ Update ค่า ตัวแปล theta และเพื่อหาค่าที่เบนเข้าหาจุดที่ดีที่สุด
 def gradient_descent(x, y, initial_theta1, learning_rate, iterations):
     theta_vals = [initial_theta1]
     for _ in range(iterations):
@@ -43,7 +52,6 @@ def gradient_descent(x, y, initial_theta1, learning_rate, iterations):
         theta_new = theta_vals[-1] - learning_rate * gradient
         theta_vals.append(theta_new)
     return theta_vals
-
 
 
 if __name__ == "__main__":
@@ -63,10 +71,13 @@ if __name__ == "__main__":
     iterations = 8
     initial_theta1 = 6
     
-    for idx, lr in enumerate(learning_rates):
-        ax = axs[idx // 2, idx % 2]
+    for idx, lr in enumerate(learning_rates): # 0, 0.1 > 1, 0.5 > 2, 0.75 > 3, 1.006
+
+        # print(list(enumerate(learning_rates)))
         
-        ax.plot(i, J, label='Cost Function')
+        ax = axs[idx // 2, idx % 2] # Plot Block by Block Started with 0,0 > 0,1 > 1,0 > 1,1
+        
+        ax.plot(i, J, label='Cost Function') # Plot Cost Function (Parabola Graph)
         ax.set_xlabel("Weight 1")
         ax.set_ylabel("E")
         ax.set_title(f'Learning Rate: {lr}')
@@ -75,7 +86,7 @@ if __name__ == "__main__":
         ax.plot(theta_vals, [j_theta(x, y, theta) for theta in theta_vals], '-o', label=f'Learning rate={lr}')
         
         ax.legend()
-        ax.grid(True)
+        # ax.grid(True)
 
-    plt.tight_layout()
+    # plt.tight_layout()
     plt.show()
