@@ -14,7 +14,7 @@ def j_theta(x, y, theta1):
 def Gradient_Descent(x, y, theta1, rate, alpha):
     plot_line(x, theta1)
 
-    for i in range(rate):
+    for _ in range(rate):
         theta1 = theta1 - alpha * 2 * (theta1-1)
         plot_line(x, theta1)
         mse = j_theta(x, y, theta1)
