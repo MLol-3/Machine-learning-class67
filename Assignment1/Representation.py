@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+DEBUG = 0
 
 # Derivative of the cost function with respect to theta1
 def derivative_j_theta(x, y, theta1):
@@ -16,12 +16,14 @@ def derivative_j_theta(x, y, theta1):
 # Gradient Descent function ใช้งานร่วมกันกับ cost function
 def gradient_descent(x, y, initial_theta1, learning_rate, iterations):
     theta_vals = [initial_theta1]
-    plot_line(x, initial_theta1)
+    if(DEBUG):
+        plot_line(x, initial_theta1)
     for _ in range(iterations):
         gradient = derivative_j_theta(x, y, theta_vals[-1])
         theta_new = theta_vals[-1] - learning_rate * gradient
         theta_vals.append(theta_new)
-        plot_line(x, theta_new)
+        if(DEBUG):
+            plot_line(x, theta_new)
     return theta_vals
 
 # function plot line 
@@ -40,12 +42,12 @@ if __name__ == "__main__":
     x = np.array([0, 2])
     y = np.array([0, 2])
     plt.scatter(x, y, color = 'red', marker='X')
-    learning_rate = 0.1
+    learning_rate = 0.25
     iterations = 100
     initial_theta1 = 0
     theta_vals = gradient_descent(x, y, initial_theta1, learning_rate, iterations)
     print(f'theta1 = {theta_vals[-1]:.4f}')
-    # plot_line(x, theta_vals[-1])
+    plot_line(x, theta_vals[-1])
     plt.xlabel('data X')
     plt.ylabel('data Y')
     plt.title(' Repersentation ')

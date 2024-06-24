@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # Data y
     y = np.array([460, 232, 315, 178])
   
-    X = (X - X.mean(axis=0)) / X.std(axis=0)    # Normalization 
+    X = (X - X.mean(axis=0)) / X.std(axis=0)    # Standardization
     X_b = np.c_[np.ones((X.shape[0], 1)), X]    # Add bias term
     # Using Gradient Descent
     theta_gd = gradient_descent(X_b, y)
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
     print("Predictions using Gradient Descent:")
     print(y_predict_gd)
-    # plt.show()
+    plt.show()
 
 
 
