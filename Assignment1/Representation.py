@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 DEBUG = 0
 
 # Derivative of the cost function with respect to theta1
-def derivative_j_theta(x, y, theta1):
+def derivative_j_theta(x, y, theta0, theta1):
     n = len(y)
     error = []
     for i in range(n):
-        hypothesis = theta1 * x[i]
+        hypothesis = theta0 + theta1 * x[i]
         xi_error = (hypothesis - y[i]) * x[i]
         error.append(xi_error)
     dj_theta1 = (1/n) * sum(error)
@@ -19,7 +19,7 @@ def gradient_descent(x, y, initial_theta1, learning_rate, iterations):
     if(DEBUG):
         plot_line(x, initial_theta1)
     for _ in range(iterations):
-        gradient = derivative_j_theta(x, y, theta_vals[-1])
+        gradient = derivative_j_theta(x, y, 0, theta_vals[-1])
         theta_new = theta_vals[-1] - learning_rate * gradient
         theta_vals.append(theta_new)
         if(DEBUG):
@@ -51,6 +51,6 @@ if __name__ == "__main__":
     plt.xlabel('data X')
     plt.ylabel('data Y')
     plt.title(' Repersentation ')
-    plt.legend(["Data points", "h(x) = theta * x"])
+    plt.legend(["Data points", "Current hypothesis"])
     plt.axis([-0.5, 3.5, -0.5, 3.5])
     plt.show()
