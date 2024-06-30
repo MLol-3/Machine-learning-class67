@@ -16,13 +16,10 @@ def gradient_descent(X, y, learning_rate=0.1, n_iterations=100):
     return theta
 
 if __name__ == "__main__":
-    # Data x
-    X = np.array([[2104, 1416, 1534, 852],
-                [5, 3, 3, 2],
-                [1, 2, 2, 1],
-                [45, 40, 30, 36]])
-    # Data y
-    y = np.array([460, 232, 315, 178])
+    # Given data x
+    X = np.array([0, 2])
+    # Given data y
+    y = np.array([0, 2])
   
     X = (X - X.mean(axis=0)) / X.std(axis=0)    # Standardization
     X_b = np.c_[np.ones((X.shape[0], 1)), X]    # Add bias term
@@ -32,16 +29,13 @@ if __name__ == "__main__":
     print(theta_gd)
 
     # Predict using the estimated parameters
-    X_new = np.array([[2104, 1416, 1534, 852],
-                    [5, 3, 3, 2],
-                    [1, 2, 2, 1],
-                    [45, 40, 30, 36]])
-    X_new = (X_new - X_new.mean(axis=0)) / X_new.std(axis=0) 
+    X_new = np.array([3, 6])
     X_new_b = np.c_[np.ones((len(X_new), 1)), X_new]  # Add bias term
     y_predict_gd = X_new_b.dot(theta_gd)
-
     print("Predictions using Gradient Descent:")
     print(y_predict_gd)
+    plt.xlabel('Epochs')
+    plt.ylabel('Error')
     plt.show()
 
 
