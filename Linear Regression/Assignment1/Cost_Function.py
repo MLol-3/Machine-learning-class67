@@ -18,11 +18,9 @@ if __name__ == "__main__":
     y = np.array([0, 2])
 
     # สร้างเส้นในการเทียบ E and theta1 
-    E  = np.linspace(-8,8)
-    theta1 = j_theta(x, y, 0, E)
-
-
-    plt.plot(E, theta1)
+    theta_sam  = np.linspace(-8,8)
+    mse_sam = j_theta(x, y, 0, theta_sam)
+    plt.plot(theta_sam, mse_sam)
     plt.xlabel("theta1")
     plt.ylabel("E ")
     plt.title('Evaluation')

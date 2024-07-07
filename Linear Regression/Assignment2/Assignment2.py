@@ -34,37 +34,43 @@ def plot_contour(x, y,start, stop, num_contours=60):
 # theta1 = a
 # learning_rate = alpha
 
-def gradient_descent(X, y, learning_rate, iterations, theta0 = 0, theta1 = 10):
+def gradient_descent(X, y, learning_rate, iterations, initial_theta0=0, initial_theta1=10):
     n = len(X)
+    theta0 = [initial_theta0]
+    theta1 = [initial_theta1]
     for _ in range(iterations):
         # Derivative theta0 and theta1
         d_theta0 = []
         d_theta1 = []
         for i in range(n):
-            d_theta0.append((theta0+theta1*X[i])-y[i])
-            d_theta1.append(((theta0+theta1*X[i])-y[i])*X[i])
-        theta0 = theta0 - learning_rate*(1/n)*sum(d_theta0)
-        theta1 = theta1 - learning_rate*(1/n)*sum(d_theta1)
-        # plot theta0 and theta1
-        plt.scatter(theta0, theta1, color = 'red', marker='X')  
+            d_theta0.append((theta0[-1] + theta1[-1] * X[i]) - y[i])
+            d_theta1.append(((theta0[-1] + theta1[-1] * X[i]) - y[i]) * X[i])
+        theta0_new = theta0[-1] - learning_rate * (1/n) * sum(d_theta0)
+        theta1_new = theta1[-1] - learning_rate * (1/n) * sum(d_theta1)
+        theta0.append(theta0_new)
+        theta1.append(theta1_new)
     return theta0, theta1
 
 
 if __name__ == "__main__":
     # Data points
-    x = np.array([0, 2])
+    X = np.array([0, 2])
     y = np.array([0, 2])
+
+    X = (X - X.mean(axis=0)) / X.std(axis=0) # Standardization
 
     # init plot contour value 
     start = -8 
     stop = 8
-    plot_contour(x, y, start, stop)
+    plot_contour(X, y, start, stop)
 
     # init gradient descent value 
-    learning_rate = 0.5
-    iterations = 1000
-    theta0, theta1 = gradient_descent(x, y, learning_rate, iterations)
-    print(f"theta0 =  {theta0:.4f}\ntheta1 = {theta1:.4f} ")
-    # set magin 
-    plt.axis([-8, 8, -8, 8])
+    learning_rate = 0.1
+    iterations = 500
+    theta0, theta1 = gradient_descent(X, y, learning_rate, iterations)
+    print(f"theta0 =  {theta0[-1]:.4f}\ntheta1 = {theta1[-1]:.4f}")
+    plt.scatter(theta0, theta1, color='red', marker='X')
+    
+    # set magin Contour
+    plt.axis([-7, 8, -7, 8])
     plt.show()
