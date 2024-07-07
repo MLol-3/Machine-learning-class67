@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # plt.scatter(X, y)
     # X = (X - X.mean(axis=0)) / X.std(axis=0)
     # Add x0 = 1 to each instance for the bias term
-    X_b = np.c_[np.ones((len(y), 1)), X]  # Add bias term
+    X_b = np.c_[np.ones((X.shape[0], 1)), X]  # Add bias term
     # print(X_b)
 
     # Using Normal Equation
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     # Predict using the estimated parameters
     X_new = np.array([3, 7])
-    X_new_b = np.c_[np.ones((len(X_new), 1)), X_new]  # Add bias term
+    X_new_b = np.c_[np.ones((X.shape[0], 1)), X_new]  # Add bias term
     y_predict_normal = X_new_b.dot(theta_normal)
     y_predict_gd = X_new_b.dot(theta_gd)
 
