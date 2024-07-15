@@ -21,4 +21,4 @@
 ### [Resub](https://github.com/MLol-3/Machine-learning-class67/blob/b37a33e434a4bc87d03d3c083c3ef68f6618a8bc/Model-Evaluation/Resub.ipynb)
 
 
-### [Hold out]()
+### [Hold out](https://github.com/MLol-3/Machine-learning-class67/blob/9f8f53df8c52d4e5bc398ef8197806d4ddbe17ca/Model-Evaluation/holdout.ipynb)
