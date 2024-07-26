@@ -35,3 +35,11 @@ https://en.wikipedia.org/wiki/Expected_value
 
 2. เขียนโปรแกรมสำหรับการทำ Nested Cross-Validation และออกแบบการทดลองเพื่อแสดงให้เห็นถึงความจำเป็นของการทำสองลูปแทนที่จะทำเพียงแค่ลูปเดียว
 
+## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 5 Linear Model Selection and Regularization
+- ### [Linear Model Selection]()
+- ### [Regularizationn]()
+1. เขียนโปรแกรมแสดงความสัมพันธ์ระหว่าง model และ cost function ของ ridge regression (Lecture หน้าที่ 37)
+
+2. เขียนโปรแกรมแสดงความสัมพันธ์ระหว่าง complexity ของ model และ etrain, etest ของ ridge regression (Lecture หน้าที่ 44)
+
+3. เขียนโปรแกรมสำหรับเปรียบเทียบค่าคลาดเคลื่อนนอกตัวอย่างของแบบจำลองเชิงเส้นที่มีและไม่มีการทำให้เป็นปรกติ (Lecture หน้าที่ 48-49)
