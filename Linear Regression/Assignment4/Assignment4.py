@@ -12,14 +12,6 @@ def gradient_descent(X, y, learning_rate=0.5, n_iterations=1000):
     for _ in range(n_iterations):
         gradients = X.T.dot(X.dot(theta) - y)
         theta = theta - learning_rate / m * gradients
-        if (DEBUG):
-            print(f'X.dot(theta) = {X.dot(theta)}\n')
-            print(f'y = {y}\n')
-            print(f'X.dot(thea) - y = {X.dot(theta) - y}\n')
-            print(f'X = {X}\n')
-            print(f'X.T = {X.T}\n')
-            print(f'X.T.dot(X.dot(theta) - y) = {gradients}\n')
-            print(f'theta = {theta}\n')
     return theta
 
 if __name__ == "__main__":
