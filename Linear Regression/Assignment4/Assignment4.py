@@ -8,7 +8,7 @@ def normal_equation(X, y):
 # Gradient Descent function
 def gradient_descent(X, y, learning_rate=0.5, n_iterations=1000):
     m = len(y)
-    theta = np.zeros((X_b.shape[1]))  # initialization of theta
+    theta = np.zeros((X.shape[1]))  # initialization of theta
     for _ in range(n_iterations):
         gradients = X.T.dot(X.dot(theta) - y)
         theta = theta - learning_rate / m * gradients
