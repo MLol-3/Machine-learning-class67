@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-DEBUG = 0
+
 # Gradient Descent function
 def gradient_descent(X, y, learning_rate=0.1, n_iterations=100):
     m = len(y)
