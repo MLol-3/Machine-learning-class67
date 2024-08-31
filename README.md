@@ -43,3 +43,12 @@ https://en.wikipedia.org/wiki/Expected_value
 2. เขียนโปรแกรมแสดงความสัมพันธ์ระหว่าง complexity ของ model และ etrain, etest ของ ridge regression (Lecture หน้าที่ 44)
 
 3. เขียนโปรแกรมสำหรับเปรียบเทียบค่าคลาดเคลื่อนนอกตัวอย่างของแบบจำลองเชิงเส้นที่มีและไม่มีการทำให้เป็นปรกติ (Lecture หน้าที่ 48-49)
+
+## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 5 logistic regression
+1. เขียนโปรแกรมสำหรับสร้างแบบจำลอง logistic regression ด้วยวิธี gradient descent สำหรับแก้ปัญหา logic AND, OR และ XOR (สำหรับปัญหา XOR ต้องใช้ interaction feature)
+
+2. ใช้โปรแกรมที่ได้จากข้อ 1 แก้ปัญหาจาก data ที่ generate ขึ้นมา โดยต้องอธิบายด้วยว่า data แต่ละชุด generate ขึ้นมาได้อย่างไร ตัวอย่างข้อมูล เช่น https://scikit-learn.org/0.15/auto_examples/plot_classifier_comparison.html
+
+- ทั้งสองข้อให้ plot decision boundary ของ logistic regression ออกมาแสดงผลด้วย
+
+3. ใช้ logistic regression แก้ปัญหา handwritten digit recognition จากชุดข้อมูล MNIST โดยทำ 2 แบบจำลอง คือ binary classification และ multi-class classification โดย binary classification ให้เลือกข้อมูลออกมาสอง class เช่น classify รูปเลข 0 และ 1 เป็นต้น ขณะที่ multi-class classification ให้ classify เลข 0-9 ออกจากกันให้ได้ ทั้งสองแบบจำลองให้นำ weight มา plot เป็นรูปเพื่อแสดงความเข้าใจการทำงานของ weight ด้วย
