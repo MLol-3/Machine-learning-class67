@@ -44,7 +44,7 @@ https://en.wikipedia.org/wiki/Expected_value
 
 3. เขียนโปรแกรมสำหรับเปรียบเทียบค่าคลาดเคลื่อนนอกตัวอย่างของแบบจำลองเชิงเส้นที่มีและไม่มีการทำให้เป็นปรกติ (Lecture หน้าที่ 48-49)
 
-## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 5 logistic regression
+## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 6 logistic regression
 1. เขียนโปรแกรมสำหรับสร้างแบบจำลอง logistic regression ด้วยวิธี gradient descent สำหรับแก้ปัญหา logic AND, OR และ XOR (สำหรับปัญหา XOR ต้องใช้ interaction feature)
 
 2. ใช้โปรแกรมที่ได้จากข้อ 1 แก้ปัญหาจาก data ที่ generate ขึ้นมา โดยต้องอธิบายด้วยว่า data แต่ละชุด generate ขึ้นมาได้อย่างไร ตัวอย่างข้อมูล เช่น https://scikit-learn.org/0.15/auto_examples/plot_classifier_comparison.html
