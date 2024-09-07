@@ -52,3 +52,19 @@ https://en.wikipedia.org/wiki/Expected_value
 - ทั้งสองข้อให้ plot decision boundary ของ logistic regression ออกมาแสดงผลด้วย
 
 3. ใช้ logistic regression แก้ปัญหา handwritten digit recognition จากชุดข้อมูล MNIST โดยทำ 2 แบบจำลอง คือ binary classification และ multi-class classification โดย binary classification ให้เลือกข้อมูลออกมาสอง class เช่น classify รูปเลข 0 และ 1 เป็นต้น ขณะที่ multi-class classification ให้ classify เลข 0-9 ออกจากกันให้ได้ ทั้งสองแบบจำลองให้นำ weight มา plot เป็นรูปเพื่อแสดงความเข้าใจการทำงานของ weight ด้วย
+
+## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 6 Bayes Decision Theory
+1. เขียนโปรแกรมสำหรับสร้างตัวจำแนกแบบเบส์สำหรับการแจกแจงปรกติตัวแปรเดียว กรณีที่ความแปรปรวนของทั้งสองคลาสเท่ากัน
+
+2. เขียนโปรแกรมสำหรับสร้างตัวจำแนกแบบเบส์สำหรับการแจกแจงปรกติตัวแปรเดียว กรณีที่ความแปรปรวนของทั้งสองคลาสไม่เท่ากัน
+
+3. เขียนโปรแกรมสำหรับสร้างตัวจำแนกกำลังสอง
+
+4. เขียนโปรแกรมสำหรับสร้างตัวจำแนกเชิงเส้น
+  #### (ทั้ง 4 ข้อให้ วาดกราฟ likelihood, posterior และขอบตัดสินใจโดยทำสองรูปแบบ คือ)
+- กำหนดค่าพารามิเตอร์ของการแจกแจก 
+- สุ่มตัวอย่างเพื่อนำมาคำนวณค่าพารามิเตอร์ของการแจกแจง 
+
+
+5. เขียนโปรแกรมสำหรับ plot decision boundary เปรียบเทียบระหว่าง LDA, QDA และ Logistic regression 
+- โดยอาจจะมีการเพิ่มพจน์ second order polynomial โดยอาจจะใช้การสุ่มข้อมูลในรูปแบบต่างๆดังนี้ https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html#sphx-glr-auto-examples-classification-plot-classifier-comparison-py หรือ https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle®Dataset=reg-plane&learningRate=0.03®ularizationRate=0&noise=0&networkShape=4,2&seed=0.87693&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&
