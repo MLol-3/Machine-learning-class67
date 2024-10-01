@@ -53,7 +53,7 @@ https://en.wikipedia.org/wiki/Expected_value
 
 3. ใช้ logistic regression แก้ปัญหา handwritten digit recognition จากชุดข้อมูล MNIST โดยทำ 2 แบบจำลอง คือ binary classification และ multi-class classification โดย binary classification ให้เลือกข้อมูลออกมาสอง class เช่น classify รูปเลข 0 และ 1 เป็นต้น ขณะที่ multi-class classification ให้ classify เลข 0-9 ออกจากกันให้ได้ ทั้งสองแบบจำลองให้นำ weight มา plot เป็นรูปเพื่อแสดงความเข้าใจการทำงานของ weight ด้วย
 
-## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 6 Bayes Decision Theory
+## แบบฝึกหัดเขียนโปรแกรมครั้งที่ 7 Bayes Decision Theory
 1. เขียนโปรแกรมสำหรับสร้างตัวจำแนกแบบเบส์สำหรับการแจกแจงปรกติตัวแปรเดียว กรณีที่ความแปรปรวนของทั้งสองคลาสเท่ากัน
 
 2. เขียนโปรแกรมสำหรับสร้างตัวจำแนกแบบเบส์สำหรับการแจกแจงปรกติตัวแปรเดียว กรณีที่ความแปรปรวนของทั้งสองคลาสไม่เท่ากัน
